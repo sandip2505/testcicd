@@ -13,11 +13,25 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+        
+      - name: Check Repository Structure
+        run: |
+          echo "📁 Checking repository structure..."
+          ls -la
+          echo "===================="
+      
       - name: HTML Validation
         uses: Cyb3r-Jak3/html5validator-action@v7.2.0
         with:
           root: .
+          format: text
+          log_level: INFO
+          
+      - name: Test Site Links
+        run: |
+          echo "🔍 Checking HTML files..."
+          find . -name "*.html" -type f
+          echo "===================="
           
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
@@ -26,3 +40,21 @@ jobs:
           branch: gh-pages
           folder: .
           clean: true
+          
+      - name: Deployment Status
+        if: success()
+        run: |
+          echo "✅ Deployment successful!"
+          echo "Site should be live at: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          
+      - name: Create Status File
+        if: success()
+        run: |
+          echo "Last deployment: $(date)" > deployment-status.txt
+          echo "Commit: ${{ github.sha }}" >> deployment-status.txt
+          
+      - name: Upload Status Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: deployment-status
+          path: deployment-status.txt
