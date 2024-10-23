@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/k991u95q0grn/public_html/test.mytimepasstrick.com
-    - /bin/cp * $DEPLOYPATH
