@@ -26,4 +26,4 @@ jobs:
         username: ${{ secrets.CPANEL_USERNAME }}
         password: ${{ secrets.CPANEL_PASSWORD }}
         local-dir: ./_site/
-        server-dir: public_html/test.mytimepasstrick.com
+        server-dir: public_html/test.mytimepasstrick.com/
