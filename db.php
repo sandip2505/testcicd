@@ -2,11 +2,11 @@
 
 $servername = "localhost";
 $username = "onlineshop";
-$password = "";
+$password = "4LFTx%HN73K}";
 $db = "onlineshop";
 
 // Create connection
-$con = mysqli_connect($servername, $username, $password, $db, 3306);
+$con = mysqli_connect($servername, $username, $password, $db);
 
 // Check connection
 if (!$con) {

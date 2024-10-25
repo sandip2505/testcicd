@@ -10,7 +10,7 @@ $errors = array();
 // connect to the database
 define('DB_SERVER', 'localhost');
    define('DB_USERNAME', 'onlineshop');
-   define('DB_PASSWORD', 'NOt[oF]MsSA=');
+   define('DB_PASSWORD', '4LFTx%HN73K}');
    define('DB_DATABASE', 'onlineshop');
    $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 if (!$db) {
