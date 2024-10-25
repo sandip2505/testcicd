@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "onlineshop";
-$password = "NOt[oF]MsSA=";
+$username = "root";
+$password = "";
 $db = "onlineshop";
 
 // Create connection
